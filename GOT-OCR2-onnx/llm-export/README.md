@@ -78,23 +78,17 @@ llm-export是一个llm模型导出工具，能够将llm模型导出为onnx和mnn
 ```sh
 git clone git@github.com:wangzhaode/llm-export.git
 ```
-2. 将需要导出的LLM项目clone到本地，如：chatglm2-6b
+2. 将需要导出的LLM项目clone到本地，如：GOT-OCR2
 ```sh
-git clone https://huggingface.co/THUDM/chatglm2-6b
-# 如果huggingface下载慢可以使用modelscope
-git clone https://modelscope.cn/ZhipuAI/chatglm2-6b.git
+git clone https://www.modelscope.cn/stepfun-ai/GOT-OCR2_0.git
 ```
 3. 执行LLMExporter导出模型
 ```sh
-cd mnn-llm
-# 将chatglm2-6b分为embedding, blocks, lm分别导出为onnx并转换为mnn, 并导出tokenizer.txt
-python llm_export.py \
-        --path ../chatglm2-6b \
-        --export_split \
-        --export_token \
-        --export_mnn \
-        --onnx_path ./chatglm2-6b-onnx \
-        --mnn_path  ./chatglm2-6b-mnn
+cd llm_models
+# 将会把block，embedding，lm,mm_projector_vary,norm,visual导出为onnx
+python llm_export.py --path E:\GOT-OCR2\GOT-OCR2_0 --export_lm --export_verbose   记得换成你自己的本地地址
+
+BaofengZan的代码修改了部分，直接执行的话会报错。
 ```
 
 ## 功能
