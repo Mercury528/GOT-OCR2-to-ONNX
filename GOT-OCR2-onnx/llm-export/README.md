@@ -85,7 +85,7 @@ git clone https://www.modelscope.cn/stepfun-ai/GOT-OCR2_0.git
 3. 执行LLMExporter导出模型
 ```sh
 cd llm_models
-# 将会把block，embedding，lm,mm_projector_vary,norm,visual导出为onnx
+# 将会把block，embedding，lm，mm_projector_vary，norm，visual导出为onnx
 python llm_export.py --path E:\GOT-OCR2\GOT-OCR2_0 --export_lm --export_verbose   记得换成你自己的本地地址
 
 BaofengZan的代码修改了部分，直接执行的话会报错。
